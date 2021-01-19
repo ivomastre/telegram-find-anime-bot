@@ -23,7 +23,7 @@ cross-fetch@^3.0.2:
   dependencies:
     node-fetch "2.6.1"
 
-debug@^4.3.1:
+debug@^4.0.1, debug@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
   integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
@@ -72,6 +72,11 @@ kitsu@^10.0.0-alpha.9:
     merge-options "^3.0.0"
     pluralize "^8.0.0"
 
+markdown-escape@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/markdown-escape/-/markdown-escape-1.1.0.tgz#228c932a47af251bb0a2d18d6001a235403777f2"
+  integrity sha512-f1+ARFbzLrBdC0Lj30uREn+zthrK/h1PO5UhN5IMDQvI2lSFn+8U06a5LHaxxYMhHD0mJoJ2BROJ/Sju5aw6+g==
+
 merge-options@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/merge-options/-/merge-options-3.0.4.tgz#84709c2aa2a4b24c1981f66c179fe5565cc6dbb7"
@@ -79,7 +84,7 @@ merge-options@^3.0.0:
   dependencies:
     is-plain-obj "^2.1.0"
 
-minimist@^1.2.5:
+minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
@@ -94,7 +99,7 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-node-fetch@2.6.1, node-fetch@^2.6.1:
+node-fetch@2.6.1, node-fetch@^2.2.0, node-fetch@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
@@ -109,10 +114,48 @@ pluralize@^8.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
-sandwich-stream@^2.0.2:
+sandwich-stream@^2.0.1, sandwich-stream@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/sandwich-stream/-/sandwich-stream-2.0.2.tgz#6d1feb6cf7e9fe9fadb41513459a72c2e84000fa"
   integrity sha512-jLYV0DORrzY3xaz/S9ydJL6Iz7essZeAfnAavsJ+zsJGZ1MOnsS52yRjU3uF3pJa/lla7+wisp//fxOwOH8SKQ==
+
+telegraf-command-parts@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/telegraf-command-parts/-/telegraf-command-parts-1.0.3.tgz#d0e078d10ce3f68469b529e5ea3a76e42d5788b3"
+  integrity sha1-0OB40Qzj9oRptSnl6jp25C1XiLM=
+  dependencies:
+    telegraf "^3.1.0"
+
+telegraf-encommands@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/telegraf-encommands/-/telegraf-encommands-1.1.5.tgz#5d30fac25b08f9f3f33e342be5c21c52b0a44f65"
+  integrity sha512-9JdF7mJ+WfJob3pwsUjNH2It5dtCIWnkwrddavd3nOd8RTq+Ubdz04HC7jbPIb9FjG+Zg5OhDILm3sliPD2fVQ==
+
+telegraf-inline-menu@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/telegraf-inline-menu/-/telegraf-inline-menu-5.3.0.tgz#a3aae9c96cc618c3f681c92382de98271a2fb7b1"
+  integrity sha512-26uZFF/7JeRa0wN1wbAu6jv/Lrc59rSWLqzya3txNCt1Lsq72gOUiKVZCzalDxibx8l7bqEnPnKaYFUh2lr7cQ==
+  dependencies:
+    typegram "^2.2.2"
+
+telegraf-stateless-question@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/telegraf-stateless-question/-/telegraf-stateless-question-2.0.0.tgz#e447228a2646e63e22d848c73337a0bdedbd7827"
+  integrity sha512-djgq3kV43sstplGPhRS8K2a5KJUpN3lDTA7uXcYU6UMfIQu6fRXraJF5YleG3PvmCMGEuhq6ObPb5J6AvpuZrQ==
+  dependencies:
+    telegram-format "^2.0.0"
+
+telegraf@^3.1.0:
+  version "3.38.0"
+  resolved "https://registry.yarnpkg.com/telegraf/-/telegraf-3.38.0.tgz#745b447547a8e6cdb626055e4d616058aaae0759"
+  integrity sha512-va4VlrKWp64JrowFoZX/NPzzA6q38kvaIukVXOWFO1V+jR1G8+hCfgJy4TX8Z3rwLJzwaBEet1QhikHDRZWl3A==
+  dependencies:
+    debug "^4.0.1"
+    minimist "^1.2.0"
+    module-alias "^2.2.2"
+    node-fetch "^2.2.0"
+    sandwich-stream "^2.0.1"
+    telegram-typings "^3.6.0"
 
 telegraf@^4.0.1:
   version "4.0.1"
@@ -127,6 +170,21 @@ telegraf@^4.0.1:
     p-timeout "^4.1.0"
     sandwich-stream "^2.0.2"
     typegram "^3.1.4"
+
+telegram-format@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/telegram-format/-/telegram-format-2.0.1.tgz#0f29ebdbf98a63da03487efae1b4cb4b79195252"
+  integrity sha512-U0pJ7mV+6Nq0EcvrUU/dtluM0BX0bhUOIG4+vaIcyy4w1e2/+0424SEfsMx0ecn8IwKHbGN/Gj4LDU+CbsFovg==
+
+telegram-typings@^3.6.0:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/telegram-typings/-/telegram-typings-3.6.1.tgz#1288d547f8694b61f1c01c2993e295f3114d9e25"
+  integrity sha512-njVv1EAhIZnmQVLocZEADYUyqA1WIXuVcDYlsp+mXua/XB0pxx+PKtMSPeZ/EE4wPWTw9h/hA9ASTT6yQelkiw==
+
+typegram@^2.2.2:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/typegram/-/typegram-2.3.3.tgz#e432f32a950a9d9f7c7f7ea3ed128fe0e1ea22ea"
+  integrity sha512-FFUBK8TdEOTHNOwqopmuMptBgqwXolzT9WGaFpcJyoEQScYj5c3AAIvhQnGR3GFKX+eGHFDRjFsHyX/PmYKBYw==
 
 typegram@^3.1.4:
   version "3.1.6"

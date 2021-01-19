@@ -9,7 +9,7 @@ async function search(ctx){
     
     const info = await api.fetch("anime/" + getRandomIntInclusive(1, 46119));
     console.log(info["data"]["canonicalTitle"])
-    return ctx.replyWithPhoto(info["data"]["posterImage"]["large"]), ctx.reply(info["data"]["synopsis"]), ctx.reply(info["data"]["canonicalTitle"]);
+    return [info["data"]["posterImage"]["large"]+ "\n", info["data"]["synopsis"] ];
 
  
 }
