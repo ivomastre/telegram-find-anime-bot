@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "jikan-node": "^1.2.1",
+    "kitsu": "^10.0.0-alpha.9",
+    "telegraf": "^4.0.1"
+  }
+}
