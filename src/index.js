@@ -24,7 +24,7 @@ const animeQuestion = new TelegrafStatelessQuestion('anime', ctx => {
 // Dont forget to use the middleware
 bot.use(animeQuestion.middleware())
 
-bot.command('search', async ctx => {
+bot.command('start', async ctx => {
     const anime =await retryForever(ctx);
     return animeQuestion.replyWithHTML(ctx, anime)
 })
