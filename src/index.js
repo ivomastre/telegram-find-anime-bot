@@ -8,8 +8,8 @@ const TelegrafStatelessQuestion = require('telegraf-stateless-question');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-
-bot.use((new LocalSession({ database: 'db.json' })).middleware())
+const localSession = new LocalSession({ database: 'db.json' })
+bot.use((localSession).middleware())
 const animeQuestion = new TelegrafStatelessQuestion('anime', ctx => {
     try{
         console.log(ctx.session.id);
@@ -45,6 +45,18 @@ bot.use(animeQuestion.middleware())
 bot.command('start', async ctx => {
     const anime =await retryForever(ctx);
     return animeQuestion.replyWithHTML(ctx, anime)
+})
+
+bot.command('score', async ctx => {
+    try{
+        const score = localSession.getSession(localSession.getSessionKey(ctx)).score;
+        return ctx.reply("Seu Score atual: " + score);
+    }
+    catch(err){
+        console.log(err);
+    }
+   
+    
 })
 
 bot.launch()
