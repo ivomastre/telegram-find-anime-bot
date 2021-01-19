@@ -8,8 +8,9 @@ async function search(ctx){
     const api = new Kitsu()
     
     const info = await api.fetch("anime/" + getRandomIntInclusive(1, 46119));
-    console.log(info["data"]["canonicalTitle"])
-    ctx.session = { name: info["data"]["canonicalTitle"]}
+    
+    ctx.session.name = info["data"]["canonicalTitle"]
+    ctx.session.id = ctx.message.chat.id + ':' + ctx.message.from.id
     return [info["data"]["posterImage"]["large"]+ "\n", info["data"]["synopsis"] ];
 
  
