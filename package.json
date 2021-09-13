@@ -1,15 +1,35 @@
 {
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
+    "lint": "eslint . --fix"
+  },
   "dependencies": {
+    "@thorbens/jikan-api": "^2.0.0-alpha.11",
     "dotenv": "^8.2.0",
     "jikan-node": "^1.2.1",
     "kitsu": "^10.0.0-alpha.9",
     "markdown-escape": "^1.1.0",
     "string-similarity": "^4.0.4",
-    "telegraf": "^4.0.1",
+    "telegraf": "^4.3.0",
     "telegraf-command-parts": "^1.0.3",
     "telegraf-encommands": "^1.1.5",
     "telegraf-inline-menu": "^5.3.0",
     "telegraf-session-local": "^2.0.0",
     "telegraf-stateless-question": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "@types/string-similarity": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.3"
   }
 }
