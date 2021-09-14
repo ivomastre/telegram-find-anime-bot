@@ -22,7 +22,7 @@ bot.command('top10', async ctx => {
   scoreCommand(ctx);
 });
 
-bot.command('changeName', async (ctx, next) => {
+bot.command('changename', async (ctx, next) => {
   changeName(ctx, next);
 });
 
