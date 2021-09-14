@@ -1,8 +1,9 @@
 import { Telegraf, Scenes, session } from 'telegraf';
 
 import scoreCommand from './commands/score';
-import { BOT_TOKEN } from './config/env';
+import { BOT_TOKEN, PORT, URL } from './config/env';
 import setupDb from './config/setupDb';
+import createSecretPath from './helpers/createSecretPath';
 import quizScene from './scenes/quizScene';
 
 const bot = new Telegraf(BOT_TOKEN);
@@ -30,11 +31,17 @@ bot.catch((err, ctx) => {
     ctx.reply('Message is not sent due to an error');
   }
 });
-
 setupDb();
-bot.launch();
 
-console.log('INFO', bot.botInfo);
+const secretPath = `/webhooks/${createSecretPath()}`;
+
+bot.launch({
+  webhook: {
+    domain: URL,
+    hookPath: secretPath,
+    port: PORT,
+  },
+});
 
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'));
