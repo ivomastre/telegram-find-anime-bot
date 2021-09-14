@@ -1,5 +1,7 @@
-import { Document } from "mongoose";
-import UserModel from "./model";
+import { Document } from 'mongoose';
+
+import UserModel from './model';
+
 export interface IUser extends Document {
   name: string;
   telegramId: string;

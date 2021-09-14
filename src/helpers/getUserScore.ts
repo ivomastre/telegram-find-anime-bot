@@ -1,13 +1,17 @@
-import { IUser } from "../models/user"
-import UserModel from "../models/user/model"
-const getUserScore = async (telegramId: string, userName: string): Promise<IUser> => {
-    let user = await UserModel.findOne({ telegramId })
+import { IUser } from '../models/user';
+import UserModel from '../models/user/model';
 
-    if (!user) {
-        user = await UserModel.create({ telegramId, name: userName })       
-    }
+const getUserScore = async (
+  telegramId: string,
+  userName: string
+): Promise<IUser> => {
+  let user = await UserModel.findOne({ telegramId });
 
-    return user
-}
+  if (!user) {
+    user = await UserModel.create({ telegramId, name: userName });
+  }
+
+  return user;
+};
 
 export default getUserScore;

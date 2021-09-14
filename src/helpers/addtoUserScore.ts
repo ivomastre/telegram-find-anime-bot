@@ -1,12 +1,16 @@
-import { IUser } from "../models/user"
-import getUserScore from "./getUserScore"
-const addToUserScore = async (telegramId: string, userName: string): Promise<IUser> => {
-    const user = await getUserScore(telegramId, userName)
+import { IUser } from '../models/user';
+import getUserScore from './getUserScore';
 
-    user.score += 1
-    user.save()
+const addToUserScore = async (
+  telegramId: string,
+  userName: string
+): Promise<IUser> => {
+  const user = await getUserScore(telegramId, userName);
 
-    return user
-}
+  user.score += 1;
+  user.save();
+
+  return user;
+};
 
 export default addToUserScore;
