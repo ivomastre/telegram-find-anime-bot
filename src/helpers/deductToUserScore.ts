@@ -7,7 +7,7 @@ const deductToUserScore = async (
 ): Promise<IUser> => {
   const user = await getUserScore(telegramId, userName);
 
-  user.score += 1;
+  user.score -= 1;
   user.save();
 
   return user;

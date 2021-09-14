@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import { Context } from 'telegraf';
 
 import addToUserScore from '../../helpers/addtoUserScore';
-import getUserScore from '../../helpers/getUserScore';
+import deductToUserScore from '../../helpers/deductToUserScore';
 
 const quizSecondStep = async (ctx: Context) => {
   const userTelegramId = ctx.update.callback_query.from.id;
@@ -19,7 +19,7 @@ const quizSecondStep = async (ctx: Context) => {
     caption = `${mention} answered ${ctx.callbackQuery.data} - Correct! - New Score: ${user.score}`;
     photoPath = 'src/public/images/success.png';
   } else {
-    const user = await getUserScore(userTelegramId, userTelegramId);
+    const user = await deductToUserScore(userTelegramId, userTelegramId);
 
     caption = `${mention} answered ${ctx.callbackQuery.data} - Wrong! - Score: ${user.score}`;
     photoPath = 'src/public/images/failure.png';
