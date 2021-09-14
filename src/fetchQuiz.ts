@@ -26,8 +26,8 @@ async function fetchQuiz(): Promise<JikanApiSeasonAnimeModel[]> {
   const animes = await fetchAnimeList();
   const roundedTitleAnimes = animes.map(anime => {
     return {
-      title: anime.title.substring(0, 64), // telegram api limitation
       ...anime,
+      title: anime.title.substring(0, 64), // telegram api limitation
     };
   });
 
