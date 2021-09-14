@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Telegraf, Scenes, session } from 'telegraf';
 
 import scoreCommand from './commands/score';
@@ -14,7 +13,7 @@ const stage = new Scenes.Stage([quizScene()]);
 bot.use(session());
 bot.use(stage.middleware());
 
-bot.command('start', async ctx => {
+bot.command('start', async (ctx: any) => {
   ctx.scene.enter('quiz');
 });
 
@@ -24,13 +23,7 @@ bot.command('score', async ctx => {
 
 bot.catch((err, ctx) => {
   console.log('Error: ', err);
-  if (err.code === '11000') {
-    ctx.reply('Message is not sent due to an error');
-  } else if (ctx?.wizard?.state?.correctAnime) {
-    ctx.reply('A quiz is already happening.');
-  } else {
-    ctx.reply('Message is not sent due to an error');
-  }
+  ctx.reply('Message is not sent due to an error');
 });
 setupDb();
 
