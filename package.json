@@ -12,6 +12,9 @@
     "mongoose": "^6.0.5",
     "telegraf": "^4.3.0"
   },
+  "engines": {
+    "node": "16.4.2"
+  },
   "devDependencies": {
     "@types/mongoose": "^5.11.97",
     "@types/node": "^16.9.1",
