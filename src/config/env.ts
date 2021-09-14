@@ -17,5 +17,5 @@ export const {
   PORT = 3000,
   URL = '',
   SUCCESS_STICKER = '',
-  FAILURE_STICKER = ''
+  FAILURE_STICKER = '',
 } = process.env;

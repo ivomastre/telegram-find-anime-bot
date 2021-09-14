@@ -1,5 +1,4 @@
 import { FAILURE_STICKER, SUCCESS_STICKER } from '../../config/env';
-
 import addToUserScore from '../../helpers/addtoUserScore';
 import deductToUserScore from '../../helpers/deductToUserScore';
 
@@ -14,12 +13,12 @@ const quizSecondStep = async (ctx: any) => {
   if (ctx.callbackQuery.data === (ctx.wizard.state as any).correctAnime) {
     const user = await addToUserScore(userTelegramId, userFirstName);
 
-    caption = `${mention} answered ${ctx.callbackQuery.data} - Correct! - New Score: ${user.score}`;
+    caption = `${mention} *answered:* \`\`\`\n${ctx.callbackQuery.data}\`\`\` \n*Correct! ✔️ - New Score: ${user.score}*`;
     stickerName = SUCCESS_STICKER;
   } else {
     const user = await deductToUserScore(userTelegramId, userTelegramId);
 
-    caption = `${mention} answered ${ctx.callbackQuery.data} - Wrong! - New Score: ${user.score}`;
+    caption = `${mention} *answered:* \`\`\`\n${ctx.callbackQuery.data}\`\`\` \n*Wrong! ❌ - New Score: ${user.score}*`;
     stickerName = FAILURE_STICKER;
   }
 
