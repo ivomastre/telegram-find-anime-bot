@@ -1,6 +1,6 @@
 import { Markup } from 'telegraf';
 
-import fetchQuiz from '../../fetchQuiz';
+import fetchQuiz from '../../helpers/fetchQuiz';
 
 const quizFirstStep = async (ctx: any) => {
   const animes = await fetchQuiz();

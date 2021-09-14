@@ -1,7 +1,7 @@
 import { IUser } from '../models/user';
 import UserModel from '../models/user/model';
 
-const getUserScore = async (
+const getUser = async (
   telegramId: string,
   userName: string
 ): Promise<IUser> => {
@@ -14,4 +14,4 @@ const getUserScore = async (
   return user;
 };
 
-export default getUserScore;
+export default getUser;

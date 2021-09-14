@@ -1,5 +1,6 @@
 import { Telegraf, Scenes, session } from 'telegraf';
 
+import changeName from './commands/changeName';
 import scoreCommand from './commands/score';
 import { BOT_TOKEN, PORT, URL } from './config/env';
 import setupDb from './config/setupDb';
@@ -17,8 +18,12 @@ bot.command('start', async (ctx: any) => {
   ctx.scene.enter('quiz');
 });
 
-bot.command('score', async ctx => {
+bot.command('top10', async ctx => {
   scoreCommand(ctx);
+});
+
+bot.command('changeName', async (ctx, next) => {
+  changeName(ctx, next);
 });
 
 bot.catch((err, ctx) => {

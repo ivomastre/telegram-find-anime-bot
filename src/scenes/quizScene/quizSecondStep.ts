@@ -1,12 +1,13 @@
 import { FAILURE_STICKER, SUCCESS_STICKER } from '../../config/env';
 import addToUserScore from '../../helpers/addtoUserScore';
 import deductToUserScore from '../../helpers/deductToUserScore';
+import formatMention from '../../helpers/formatMention';
 
 const quizSecondStep = async (ctx: any) => {
   const userTelegramId = ctx.update.callback_query.from.id;
   const userFirstName = ctx.update.callback_query.from.first_name;
 
-  const mention = `[${userFirstName}](tg://user?id=${userTelegramId})`;
+  const mention = formatMention(userTelegramId, userFirstName);
   let caption = '';
   let stickerName = '';
 
