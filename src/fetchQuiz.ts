@@ -2,7 +2,7 @@ import { JikanApiClient, JikanApiSeasonAnimeModel } from '@thorbens/jikan-api';
 
 const seasonArray = ['summer', 'spring', 'fall', 'winter'] as const;
 
-function getRandomInt(min, max) {
+function getRandomInt(min: number, max: number) {
   const integerMin = Math.ceil(min);
   const integerMax = Math.floor(max);
   return Math.floor(Math.random() * (integerMax - integerMin + 1)) + integerMin;

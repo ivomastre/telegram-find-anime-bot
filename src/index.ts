@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Telegraf, Scenes, session } from 'telegraf';
 
 import scoreCommand from './commands/score';

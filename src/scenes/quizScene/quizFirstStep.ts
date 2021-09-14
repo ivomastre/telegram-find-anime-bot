@@ -1,8 +1,10 @@
-import { Markup } from 'telegraf';
+// @ts-nocheck
+
+import { Context, Markup } from 'telegraf';
 
 import fetchQuiz from '../../fetchQuiz';
 
-const quizFirstStep = async ctx => {
+const quizFirstStep = async (ctx: Context) => {
   const animes = await fetchQuiz();
   const correctAnime = animes[Math.floor(Math.random() * animes.length)];
 
