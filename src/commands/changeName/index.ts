@@ -3,17 +3,15 @@ import { Context } from 'telegraf';
 import formatMention from '../../helpers/formatMention';
 import getUser from '../../helpers/getUserScore';
 
-const regex = /^\/([^@\s]+)@?(?:(\S+)|)\s?([\s\S]+)?$/i;
-
 const changeName = async (ctx: Context, next: () => Promise<void>) => {
   if (!('text' in ctx.message!)) return next();
 
-  const match = regex.exec(ctx.message.text);
+  const match = ctx.state.command;
   const userTelegramId = String(ctx.message.from.id);
 
   if (!match) return next();
 
-  const newName = match[3];
+  const newName = match.args;
 
   if (!newName) {
     return ctx.reply(`You didn't specify a new name`);
