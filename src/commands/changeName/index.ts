@@ -25,9 +25,8 @@ const changeName = async (ctx: Context, next: () => Promise<void>) => {
   user.name = newName;
   await user.save();
 
-  return ctx.reply(
-    `Hello ${mention}, your name has been changed to ${newName}`,
-    { parse_mode: 'Markdown' }
+  return ctx.replyWithMarkdown(
+    `Hello ${mention}, your name has been changed to ${newName}`
   );
 };
 

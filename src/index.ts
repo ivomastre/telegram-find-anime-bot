@@ -1,7 +1,8 @@
 import { Telegraf, Scenes, session } from 'telegraf';
 
 import changeName from './commands/changeName';
-import scoreCommand from './commands/score';
+import statsCommand from './commands/stats';
+import top10Command from './commands/top10';
 import { BOT_TOKEN, PORT, URL } from './config/env';
 import setupDb from './config/setupDb';
 import createSecretPath from './helpers/createSecretPath';
@@ -19,11 +20,15 @@ bot.command('start', async (ctx: any) => {
 });
 
 bot.command('top10', async ctx => {
-  scoreCommand(ctx);
+  top10Command(ctx);
 });
 
 bot.command('changename', async (ctx, next) => {
   changeName(ctx, next);
+});
+
+bot.command('stats', async (ctx, next) => {
+  statsCommand(ctx, next);
 });
 
 bot.catch((err, ctx) => {

@@ -6,6 +6,12 @@ export interface IUser extends Document {
   name: string;
   telegramId: string;
   score: number;
+  stats: {
+    wins: number;
+    losses: number;
+  };
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export default UserModel;

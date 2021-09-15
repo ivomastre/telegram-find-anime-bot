@@ -13,12 +13,22 @@ const quizSecondStep = async (ctx: any) => {
   if (ctx.callbackQuery.data === (ctx.wizard.state as any).correctAnime) {
     const user = await addToUserScore(userTelegramId, userFirstName);
 
-    caption = `${formatMention(userTelegramId, user.name)} *answered:* \`\`\`\n${ctx.callbackQuery.data}\`\`\` \n*Correct! ✔️ - New Score: ${user.score}*`;
+    caption = `${formatMention(
+      userTelegramId,
+      user.name
+    )} *answered:* \`\`\`\n${
+      ctx.callbackQuery.data
+    }\`\`\` \n*Correct! ✔️ - New Score: ${user.score}*`;
     stickerName = SUCCESS_STICKER;
   } else {
     const user = await deductToUserScore(userTelegramId, userTelegramId);
 
-    caption = `${formatMention(userTelegramId, user.name)} *answered:* \`\`\`\n${ctx.callbackQuery.data}\`\`\` \n*Wrong! ❌ - New Score: ${user.score}*`;
+    caption = `${formatMention(
+      userTelegramId,
+      user.name
+    )} *answered:* \`\`\`\n${
+      ctx.callbackQuery.data
+    }\`\`\` \n*Wrong! ❌ - New Score: ${user.score}*`;
     stickerName = FAILURE_STICKER;
   }
 

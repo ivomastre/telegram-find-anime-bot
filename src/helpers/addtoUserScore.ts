@@ -8,6 +8,8 @@ const addToUserScore = async (
   const user = await getUserScore(telegramId, userName);
 
   user.score += 1;
+  user.stats.wins += 1;
+
   user.save();
 
   return user;

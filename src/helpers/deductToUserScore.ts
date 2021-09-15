@@ -9,6 +9,8 @@ const deductToUserScore = async (
   if (user.score === 0) return user;
 
   user.score -= 1;
+  user.stats.losses += 1;
+
   user.save();
 
   return user;
