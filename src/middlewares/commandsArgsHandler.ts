@@ -3,7 +3,7 @@ import { Context, Middleware } from 'telegraf';
 const regex = /^\/([^@\s]+)@?(?:(\S+)|)\s?([\s\S]+)?$/i;
 
 const commandsArgsHandler: Middleware<Context> = (ctx, next) => {
-  if (!('text' in ctx.message!)) return next();
+  if (!ctx.message || !('text' in ctx.message!)) return next();
 
   const message = ctx.message.text;
   const match = regex.exec(message);

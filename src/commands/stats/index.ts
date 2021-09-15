@@ -4,7 +4,7 @@ import formatMention from '../../helpers/formatMention';
 import getUserScore from '../../helpers/getUserScore';
 
 const statsCommand = async (ctx: Context, next: () => Promise<void>) => {
-  if (!('text' in ctx.message!)) return next();
+  if (!ctx.message || !('text' in ctx.message!)) return next();
 
   const match = ctx.state.command;
   const mentionUser = match.mention?.user;

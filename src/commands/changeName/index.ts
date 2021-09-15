@@ -4,7 +4,7 @@ import formatMention from '../../helpers/formatMention';
 import getUser from '../../helpers/getUserScore';
 
 const changeName = async (ctx: Context, next: () => Promise<void>) => {
-  if (!('text' in ctx.message!)) return next();
+  if (!ctx.message || !('text' in ctx.message!)) return next();
 
   const match = ctx.state.command;
   const userTelegramId = String(ctx.message.from.id);
