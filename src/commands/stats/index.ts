@@ -21,7 +21,9 @@ const statsCommand = async (ctx: Context, next: () => Promise<void>) => {
   return ctx.replyWithMarkdown(
     `${formatMention(userTelegramId, userFirstName)} has : \n *${
       user.score
-    } points 👏\n ${user.stats.wins} wins ✔️\n ${user.stats.losses} losses ❌* `
+    } points 👏\n ${user.stats.wins} wins ✔️\n ${
+      user.stats.losses
+    } losses ❌ \n Biggest Win Streak: ${user.stats.biggestWinStreak}*`
   );
 };
 

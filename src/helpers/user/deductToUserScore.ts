@@ -8,9 +8,12 @@ const deductToUserScore = async (
   const user = await getUserScore(telegramId, userName);
   if (user.score === 0) return user;
 
+  if (user.winStreak > user.stats.biggestWinStreak) {
+    user.stats.biggestWinStreak = user.winStreak;
+  }
   user.score -= 1;
   user.stats.losses += 1;
-  user.stats.winStreak = 0;
+  user.winStreak = 0;
 
   user.save();
 

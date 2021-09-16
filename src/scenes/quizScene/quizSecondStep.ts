@@ -21,7 +21,7 @@ const quizSecondStep = async (ctx: any) => {
       ctx.callbackQuery.data
     }\`\`\` \n*Correct! ✔️ - New Score: ${user.score}*`;
     stickerName = SUCCESS_STICKER;
-    winStreak = user.stats.winStreak;
+    winStreak = user.winStreak;
   } else {
     const user = await deductToUserScore(userTelegramId, userTelegramId);
 

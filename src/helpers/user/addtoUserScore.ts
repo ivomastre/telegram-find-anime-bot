@@ -9,7 +9,7 @@ const addToUserScore = async (
 
   user.score += 1;
   user.stats.wins += 1;
-  user.stats.winStreak += 1;
+  user.winStreak += 1;
 
   user.save();
 

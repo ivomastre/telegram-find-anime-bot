@@ -6,10 +6,11 @@ export interface IUser extends Document {
   name: string;
   telegramId: string;
   score: number;
+  winStreak: number;
   stats: {
     wins: number;
     losses: number;
-    winStreak: number;
+    biggestWinStreak: number;
   };
   createdAt: Date;
   updatedAt: Date;
