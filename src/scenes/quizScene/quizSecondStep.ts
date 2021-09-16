@@ -34,6 +34,7 @@ const quizSecondStep = async (ctx: any) => {
     stickerName = FAILURE_STICKER;
   }
 
+  caption = `${caption} \n\n*Correct anime: * \`\`\`\n${ctx.scene.session.correctAnime}\`\`\``;
   caption = `${caption} \n*Win streak: ${winStreak}*`;
 
   ctx.editMessageCaption(caption, { parse_mode: 'Markdown' });

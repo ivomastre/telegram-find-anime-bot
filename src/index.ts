@@ -38,5 +38,4 @@ bot.launch({
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
 // TODO: fix all the lint warning
-// TODO: add the correct anime name
 // TODO: add a system that deducts more points if the user has more points

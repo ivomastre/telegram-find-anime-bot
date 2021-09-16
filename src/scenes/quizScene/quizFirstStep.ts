@@ -6,6 +6,7 @@ import QuizModel from '../../models/quiz';
 const quizFirstStep = async (ctx: any) => {
   const animes = await fetchQuiz();
   const correctAnime = animes[Math.floor(Math.random() * animes.length)];
+  ctx.scene.session.correctAnime = correctAnime.title;
 
   await QuizModel.create({
     correctAnime: correctAnime.title,
