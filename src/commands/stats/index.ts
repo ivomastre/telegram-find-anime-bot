@@ -1,10 +1,14 @@
 import { Context } from 'telegraf';
+import { Message } from 'telegraf/typings/core/types/typegram';
 
 import formatMention from '../../helpers/formatMention';
 import getUserScore from '../../helpers/user/getUserScore';
 
-const statsCommand = async (ctx: Context, next: () => Promise<void>) => {
-  if (!ctx.message || !('text' in ctx.message!)) return next();
+const statsCommand = async (
+  ctx: Context,
+  next: () => Promise<void>
+): Promise<Message.TextMessage | void> => {
+  if (!ctx.message || !('text' in ctx.message)) return next();
 
   const match = ctx.state.command;
   const mentionUser = match.mention?.user;

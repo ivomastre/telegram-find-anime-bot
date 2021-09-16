@@ -36,7 +36,7 @@ const commands: ICommand[] = [
   },
 ];
 
-const setupCommands = (bot: Telegraf<Context>) => {
+const setupCommands = (bot: Telegraf<Context>): void => {
   commands.forEach(({ name, fn }) => {
     bot.command(name, fn);
   });

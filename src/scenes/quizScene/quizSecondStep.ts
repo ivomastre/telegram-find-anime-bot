@@ -3,7 +3,7 @@ import formatMention from '../../helpers/formatMention';
 import addToUserScore from '../../helpers/user/addtoUserScore';
 import deductToUserScore from '../../helpers/user/deductToUserScore';
 
-const quizSecondStep = async (ctx: any) => {
+const quizSecondStep = async (ctx: any): Promise<any> => {
   const userTelegramId = ctx.update.callback_query.from.id;
   const userFirstName = ctx.update.callback_query.from.first_name;
 

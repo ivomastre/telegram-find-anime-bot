@@ -1,6 +1,6 @@
 import { Context, Telegraf } from 'telegraf';
 
-const setupBotCommandsInfo = async (bot: Telegraf<Context>) => {
+const setupBotCommandsInfo = async (bot: Telegraf<Context>): Promise<void> => {
   bot.telegram.setMyCommands([
     {
       command: 'quiz',
