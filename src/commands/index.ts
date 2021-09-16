@@ -37,9 +37,9 @@ const commands: ICommand[] = [
 ];
 
 const setupCommands = (bot: Telegraf<Context>) => {
-    commands.forEach(({ name, fn }) => {
-      bot.command(name, fn);
-    });
+  commands.forEach(({ name, fn }) => {
+    bot.command(name, fn);
+  });
 };
 
 export default setupCommands;

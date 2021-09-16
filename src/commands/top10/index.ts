@@ -1,6 +1,6 @@
 import { Context } from 'telegraf';
 
-import listUserScore from '../../helpers/listUserScore';
+import listUserScore from '../../helpers/user/listUserScore';
 import formatScore from './formatScore';
 
 const top10Command = async (ctx: Context) => {

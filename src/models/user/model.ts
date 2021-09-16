@@ -10,6 +10,7 @@ const schema = new Schema<IUser>(
     stats: {
       wins: { type: Number, required: true, default: 0 },
       losses: { type: Number, required: true, default: 0 },
+      winStreak: { type: Number, required: true, default: 0 },
     },
   },
   { timestamps: true }

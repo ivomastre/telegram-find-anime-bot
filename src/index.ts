@@ -1,9 +1,6 @@
 import { Telegraf, Scenes, session } from 'telegraf';
-import setupCommands from './commands';
 
-import changeName from './commands/changeName';
-import statsCommand from './commands/stats';
-import top10Command from './commands/top10';
+import setupCommands from './commands';
 import { BOT_TOKEN, PORT, URL } from './config/env';
 import setupBotCommandsInfo from './config/setupBotCommands';
 import setupDb from './config/setupDb';
@@ -40,4 +37,5 @@ bot.launch({
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
-// TODO: add a command handler
+// TODO: add the correct anime name
+// TODO: add a system that deducts more points if the user has more points

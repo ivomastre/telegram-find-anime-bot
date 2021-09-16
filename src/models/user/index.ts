@@ -9,6 +9,7 @@ export interface IUser extends Document {
   stats: {
     wins: number;
     losses: number;
+    winStreak: number;
   };
   createdAt: Date;
   updatedAt: Date;

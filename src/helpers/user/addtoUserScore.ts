@@ -1,4 +1,4 @@
-import { IUser } from '../models/user';
+import { IUser } from '../../models/user';
 import getUserScore from './getUserScore';
 
 const addToUserScore = async (
@@ -9,6 +9,7 @@ const addToUserScore = async (
 
   user.score += 1;
   user.stats.wins += 1;
+  user.stats.winStreak += 1;
 
   user.save();
 

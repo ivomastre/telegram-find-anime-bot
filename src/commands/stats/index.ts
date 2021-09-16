@@ -1,7 +1,7 @@
 import { Context } from 'telegraf';
 
 import formatMention from '../../helpers/formatMention';
-import getUserScore from '../../helpers/getUserScore';
+import getUserScore from '../../helpers/user/getUserScore';
 
 const statsCommand = async (ctx: Context, next: () => Promise<void>) => {
   if (!ctx.message || !('text' in ctx.message!)) return next();

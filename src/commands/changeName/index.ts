@@ -1,7 +1,7 @@
 import { Context } from 'telegraf';
 
 import formatMention from '../../helpers/formatMention';
-import getUser from '../../helpers/getUserScore';
+import getUser from '../../helpers/user/getUserScore';
 
 const changeName = async (ctx: Context, next: () => Promise<void>) => {
   if (!ctx.message || !('text' in ctx.message!)) return next();

@@ -1,5 +1,5 @@
-import { IUser } from '../models/user';
-import UserModel from '../models/user/model';
+import { IUser } from '../../models/user';
+import UserModel from '../../models/user/model';
 
 const getUser = async (
   telegramId: string,

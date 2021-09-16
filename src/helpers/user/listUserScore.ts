@@ -1,5 +1,5 @@
-import { IUser } from '../models/user';
-import UserModel from '../models/user/model';
+import { IUser } from '../../models/user';
+import UserModel from '../../models/user/model';
 
 const listUserScore = async (): Promise<IUser[]> => {
   const users = await UserModel.find()

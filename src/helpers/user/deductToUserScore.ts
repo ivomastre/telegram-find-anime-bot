@@ -1,4 +1,4 @@
-import { IUser } from '../models/user';
+import { IUser } from '../../models/user';
 import getUserScore from './getUserScore';
 
 const deductToUserScore = async (
@@ -10,6 +10,7 @@ const deductToUserScore = async (
 
   user.score -= 1;
   user.stats.losses += 1;
+  user.stats.winStreak = 0;
 
   user.save();
 
