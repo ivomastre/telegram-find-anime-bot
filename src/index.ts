@@ -1,4 +1,5 @@
 import { Telegraf, Scenes, session } from 'telegraf';
+import setupCommands from './commands';
 
 import changeName from './commands/changeName';
 import statsCommand from './commands/stats';
@@ -18,21 +19,7 @@ bot.use(session());
 bot.use(stage.middleware());
 bot.use(commandsArgsHandler);
 
-bot.command('quiz', async (ctx: any) => {
-  ctx.scene.enter('quiz');
-});
-
-bot.command('top10', async ctx => {
-  top10Command(ctx);
-});
-
-bot.command('changename', async (ctx, next) => {
-  changeName(ctx, next);
-});
-
-bot.command('stats', async (ctx, next) => {
-  statsCommand(ctx, next);
-});
+setupCommands(bot);
 
 bot.catch((err, ctx) => {
   console.log('Error: ', err);

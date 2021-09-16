@@ -16,7 +16,8 @@ const setupBotCommandsInfo = async (bot: Telegraf<Context>) => {
     },
     {
       command: 'stats',
-      description: 'Show your stats. You can also see another person stats (e.g /stats [text_mention]).',
+      description:
+        'Show your stats. You can also see another person stats (e.g /stats [text_mention]).',
     },
   ]);
 };
