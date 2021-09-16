@@ -1,10 +1,16 @@
 import { Markup } from 'telegraf';
 
 import fetchQuiz from '../../helpers/fetchQuiz';
+import QuizModel from '../../models/quiz';
 
 const quizFirstStep = async (ctx: any) => {
   const animes = await fetchQuiz();
   const correctAnime = animes[Math.floor(Math.random() * animes.length)];
+
+  await QuizModel.create({
+    correctAnime: correctAnime.title,
+    animes,
+  });
 
   const buttonCallbackArray = animes.map(anime =>
     Markup.button.callback(anime.title, anime.title)
